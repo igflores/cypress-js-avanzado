@@ -1,0 +1,8 @@
+{
+  "createProductFixture": {
+    "name": "Sweater blanco",
+    "price": "15.99",
+    "url": "https://i.pinimg.com/474x/fa/8b/d1/fa8bd18d19dadc011515403b6f52e482.jpg",
+    "id": "123abc"
+  }
+}

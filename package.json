@@ -13,6 +13,6 @@
   "license": "ISC",
   "homepage": "git@github.com:igflores/cypress-js-avanzado.git",
   "devDependencies": {
-    "cypress": "^13.12.0"
+    "cypress": "13.12.0"
   }
 }
