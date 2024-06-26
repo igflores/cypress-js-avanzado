@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "esModuleInterop": true,
+        "types": ["cypress", "node"],
+		"target": "es5",
+		"baseUrl": ".",
+		"paths": {
+			"@pages/*": ["./cypress/support/pages/*"],
+			"@util/*": ["./cypress/support/utils/*"],
+			"@data/*": ["./cypress/fixtures/data/*"],
+		}
+	},
+	"exclude": ["node_modules"],
+}
