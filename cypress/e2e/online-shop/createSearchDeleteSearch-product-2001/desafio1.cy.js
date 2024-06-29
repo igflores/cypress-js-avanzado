@@ -1,16 +1,26 @@
-import { registerPage } from "../support/pages/registerPage";
-import { loginPage } from "../support/pages/loginPage";
-import { welcomePage } from "../support/pages/welcomePage";
-import { productListPage } from "../support/pages/productListPage";
-import constants from "../support/constants";
+import { registerPage } from "../../../support/pages/registerPage";
+import { loginPage } from "../../../support/pages/loginPage";
+import { welcomePage } from "../../../support/pages/welcomePage";
+import { productListPage } from "../../../support/pages/productListPage";
+import constants from "../../../support/constants";
 
-describe("Challenge # 1 - Online Shop: Add product, search for it, delete it, and search for it to verify that it does not exist", () => {
+const directoryName = __dirname.replaceAll("\\", "/");
+const module = directoryName.split(/[/]/)[2];
+const suiteName = directoryName
+  .slice(directoryName.lastIndexOf("/") + 1)
+  .split("-")
+  .slice(0, -1)
+  .join("-");
+const suiteId = directoryName.split(/[-]/).pop();
+
+describe(`${suiteName} - ${module}`, () => {
   let data;
-
   before(() => {
-    cy.fixture("data/desafio-1.json").then((fixtureData) => {
-      data = fixtureData.createProductFixture;
-    });
+    cy.fixture(`${module}/${suiteName}-${suiteId}/${suiteId}.json`).then(
+      (fixtureData) => {
+        data = fixtureData.createProductFixture;
+      }
+    );
   });
 
   beforeEach("Preconditions", () => {

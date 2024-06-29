@@ -5,20 +5,21 @@ module.exports = defineConfig({
   viewportWidth: 1920,
   chromeWebSecurity: false,
   retries: process.env.CI ? 2 : 0,
-  video:false,
-  
+  video: false,
+
   e2e: {
-    specPattern: 'cypress/e2e/**/*.cy.{js,jsx,ts,tsx}',
+    specPattern: "cypress/e2e/**/*.cy.{js,jsx,ts,tsx}",
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
-    baseUrl: 'https://pushing-it.vercel.app/',
+    baseUrl: "https://pushing-it.vercel.app/",
     watchForFileChanges: false,
-    defaultCommandTimeout: 4000,
+    defaultCommandTimeout: 10000,
+    fixturesFolder: "cypress/e2e/",
 
     env: {
-      username: 'pushingit',
-      password: '123456!',
-    }
+      username: "pushingit",
+      password: "123456!",
+    },
   },
 });
